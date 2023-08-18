@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tabela de Multiplicação</title>
+ <script> function gerarTabuada() { var numero = parseInt(document.getElementById("numero").value);
+var tabela = document.getElementById("tabela");
+
+ tabela.innerHTML = "";
+
+for (var i = 1; i <= 10; i++) {
+ var resultado = numero * i;
+
+ 
+ var linha = document.createElement("tr");
+
+
+var colunaNumero = document.createElement("td");
+colunaNumero.textContent = numero;
+
+var colunaMultiplicador = document.createElement("td");
+colunaMultiplicador.textContent = "x " + i;
+
+var colunaResultado = document.createElement("td");
+colunaResultado.textContent = resultado;
+
+linha.appendChild(colunaNumero);
+linha.appendChild(colunaMultiplicador);
+ linha.appendChild(colunaResultado);
+
+ // Adicionar a linha à tabela
+tabela.appendChild(linha);
+ }
+ }
+ </script>
+</head>
+<body>
+ <h1>Tabela de Multiplicação</h1>
+ <label for="numero">Digite um número:</label>
+<input type="number" id="numero">
+ <button onclick="gerarTabuada()">Gerar Tabuada</button>
+ <table id="tabela">
+ <!-- A tabela será preenchida dinamicamente -->
+ </table>
+</body>
+</html>
